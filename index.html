@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Vue test</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css" /> -->
+    <link rel="stylesheet" href="css/style.css">
+    
+</head>
+<body>
+    <div class="nav-bar"></div>
+    <div id="app">
+        <div class="product">
+            <div class="product-image">
+                <img :src="image" :href="url">
+            </div>
+            
+            <div class="product-info">
+                <h1>{{ product }}</h1>
+                <a :href="url" target="_blank">More products like this</a>
+                <p><span v-if="onSale">On Sale!</span></p>
+
+                <ul>
+                    <li v-for="detail in details">{{ detail }}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="dist/vue.js"></script>
+    <script src="main.js"></script> 
+</body>
+</html>
